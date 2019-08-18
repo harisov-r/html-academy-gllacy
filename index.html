@@ -4,30 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Глейси</title>
 </head>
 <body>
-    <header class="page-header">
+    <header class="page-header  centered">
         <nav class="page-navigation">
             <a class="page-header-logo"><img src="img/logo.svg" width="154" alt="Логотип Глейси" class="logo"></a>
             <ul class="site-navigation">
-                <li><a href="catalog.html">Каталог</a></li>
-                <li><a href="delivery.html">Доставка и оплата</a></li>
-                <li><a href="about.html">О Компании</a></li>
+                <li class="site-navigation-catalog-item"><a href="catalog.html">Каталог</a></li>
+                <li class="site-navigation-delivery-item"><a href="delivery.html">Доставка и оплата</a></li>
+                <li class="site-navigation-about-item"><a href="about.html">О Компании</a></li>
             </ul>
             <ul class="user-navigation">
-                <li><a href="#">Вход</a></li>
-                <li><a href="#">Пусто</a></li>
+                <li class="user-navigation-login-item"><a href="#">Вход</a></li>
+                <li class="user-navigation-basket-item"><a href="#">Пусто</a></li>
             </ul>
         </nav>
-        <div class="additional-info">
-            <p class="work-hours">с 10 до 20 ежедневно</p>
-            <p class="phone-number">8 812 450-50-50</p>
-        </div>
+        <!--<div class="additional-info">-->
+            <p class="work-hours">C 10 до 20, ежедневно</p>
+            <p class="phone-number">8 812 450-25-25</p>
+        <!--</div>-->
     </header>
 
-    <main class="page-main">
+    <main class="page-main centered">
         <h1 class="visually-hidden">Магазин мороженого Gllacy Shop</h1>
 
         <section class="page-main-slider">
@@ -116,7 +118,7 @@
         </section>
     </main>
 
-    <footer class="page-footer">
+    <footer class="page-footer centered">
         <ul class="social-list">
             <li class="social-item">
                 <a class="social-button" href="">Твиттер</a>

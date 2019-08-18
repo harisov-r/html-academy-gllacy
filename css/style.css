@@ -1,4 +1,22 @@
 
+/*Шрифт:*/
+/*400 - Regular*/
+/*500 - Medium*/
+/*700 - Bold*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none; /*ссылка - без подчеркивания*/
+}
+
+body {
+    background-color: #849d8f; /* фон для всей страницы */
+}
+
 .visually-hidden {
     /* Удаляем элемент из потока документа */
     position: absolute;
@@ -21,18 +39,91 @@
     margin: -1px;
 }
 
-.page-header {
-    background-color: #87a092;
+.centered {  /* центрирует */
+    width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
 }
 
 .page-navigation {
     display: flex;
 }
 
-.site-navigation, .user-navigation {
+.site-navigation {
+    margin-top: 21px;
+    margin-left: 22px;
+
     display: flex;     /*чтобы пункты меню друг за другом в строку выстроились*/
     list-style: none; /*убрали маркер у списка (точечку)*/
     flex-wrap: wrap; /* если пунктов меню будет больше, чем влезает - чтобы перенеслись на другую строчку*/
+
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.site-navigation a {
+    color: #ffffff; /*ссылки не наследуют цвет от текста, им отдельно задается цвет*/
+}
+
+.site-navigation-delivery-item {
+    margin-left: 30px;
+}
+
+.site-navigation-about-item {
+    margin-left: 28px;
+}
+
+.user-navigation {
+    margin-top: 22px;
+    margin-left: 444px;
+
+    display: flex;     /*чтобы пункты меню друг за другом в строку выстроились*/
+    list-style: none; /*убрали маркер у списка (точечку)*/
+    flex-wrap: wrap; /* если пунктов меню будет больше, чем влезает - чтобы перенеслись на другую строчку*/
+
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.user-navigation a {
+    color: #ffffff; /*ссылки не наследуют цвет от текста, им отдельно задается цвет*/
+}
+
+.user-navigation-basket-item {
+    margin-left: 70px;
+}
+
+/*.additional-info {*/
+    /*width: 200px;*/
+    /*margin-left: auto;*/
+    /*margin-top: -5px;*/
+/*}*/
+
+.work-hours {
+    margin-top: -5px;
+    margin-left: 995px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.phone-number {
+    margin-top: 5px;
+    margin-left: 980px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #ffffff;
 }
 
 .button {
