@@ -100,12 +100,6 @@ body {
     margin-left: 70px;
 }
 
-/*.additional-info {*/
-    /*width: 200px;*/
-    /*margin-left: auto;*/
-    /*margin-top: -5px;*/
-/*}*/
-
 .work-hours {
     margin-top: -5px;
     margin-left: 995px;
@@ -125,6 +119,56 @@ body {
     font-weight: 700;
     color: #ffffff;
 }
+
+/*-------------------------*/
+/* слайдер */
+/*---------------------------*/
+.page-main-slider {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    border: 1px solid red;
+}
+
+.slider-controls {
+    position: absolute;
+
+}
+
+.slider-controls-label {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 21px;
+    height: 21px;
+
+    border: 2px solid #ffffff;
+    border-radius: 50%; /* окружность */
+
+    cursor: pointer; /* указатель - рука */
+
+    /*background-color: #ededed;*/
+    /*background-image: url("../img/radio-off.svg");*/
+    /*background-size: cover; !* Масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока. *!*/
+}
+
+#slider-selector-button1:checked ~ .slider-controls label[for="slider-selector-button1"],
+#slider-selector-button2:checked ~ .slider-controls label[for="slider-selector-button2"],
+#slider-selector-button3:checked ~ .slider-controls label[for="slider-selector-button3"] { /* для тильды нужно, чтобы теги имели одного родителя поэтому используется .slider-controls */
+
+    background-color: #ffffff;
+
+    /*background-image: url("../img/radio-on.svg");*/
+    /*background-size: cover; !* Масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока. *!*/
+}
+
+#slider-selector-button1:not(:checked) ~ .slider-controls label[for="slider-selector-button1"]:hover,
+#slider-selector-button2:not(:checked) ~ .slider-controls label[for="slider-selector-button2"]:hover,
+#slider-selector-button3:not(:checked) ~ .slider-controls label[for="slider-selector-button3"]:hover {
+
+    background-color: #b2c1b7; /* при наведении фон внутри кружка немного меняется */
+}
+
+/*--- окончание слайдера ---*/
 
 .button {
     cursor: pointer; /* при наведении рука с пальцем в качестве курсора, а не стрелочка*/

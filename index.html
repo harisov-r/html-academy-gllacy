@@ -14,6 +14,7 @@
         <nav class="page-navigation">
             <a class="page-header-logo"><img src="img/logo.svg" width="154" alt="Логотип Глейси" class="logo"></a>
             <ul class="site-navigation">
+                <!-- ToDo сделать подчерк у всех слов -->
                 <li class="site-navigation-catalog-item"><a href="catalog.html">Каталог</a></li>
                 <li class="site-navigation-delivery-item"><a href="delivery.html">Доставка и оплата</a></li>
                 <li class="site-navigation-about-item"><a href="about.html">О Компании</a></li>
@@ -23,16 +24,25 @@
                 <li class="user-navigation-basket-item"><a href="#">Пусто</a></li>
             </ul>
         </nav>
-        <!--<div class="additional-info">-->
-            <p class="work-hours">C 10 до 20, ежедневно</p>
-            <p class="phone-number">8 812 450-25-25</p>
-        <!--</div>-->
+        <p class="work-hours">C 10 до 20, ежедневно</p>
+        <p class="phone-number">8 812 450-25-25</p>
     </header>
 
     <main class="page-main centered">
         <h1 class="visually-hidden">Магазин мороженого Gllacy Shop</h1>
 
         <section class="page-main-slider">
+            <!-- настоящие элементы управления слайдером, которые будут скрыты -->
+            <input class="visually-hidden2" type="radio" id="slider-selector-button1" name="slider-selector" checked>
+            <input class="visually-hidden2" type="radio" id="slider-selector-button2" name="slider-selector">
+            <input class="visually-hidden2" type="radio" id="slider-selector-button3" name="slider-selector">
+
+            <!-- псевдо элементы управления слайдером, которые показаны пользователю -->
+            <div class="slider-controls">
+                <label class="slider-controls-label" for="slider-selector-button1"></label>
+                <label class="slider-controls-label" for="slider-selector-button2"></label>
+                <label class="slider-controls-label" for="slider-selector-button3"></label>
+            </div>
         </section>
 
         <section class="gifts">
