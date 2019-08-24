@@ -1,4 +1,3 @@
-
 /*Шрифт:*/
 /*400 - Regular*/
 /*500 - Medium*/
@@ -39,7 +38,8 @@ body {
     margin: -1px;
 }
 
-.centered {  /* центрирует */
+.centered,
+.content-wrapper { /* центрирует */
     width: 1150px;
     margin-left: auto;
     margin-right: auto;
@@ -54,7 +54,7 @@ body {
     margin-top: 21px;
     margin-left: 22px;
 
-    display: flex;     /*чтобы пункты меню друг за другом в строку выстроились*/
+    display: flex; /*чтобы пункты меню друг за другом в строку выстроились*/
     list-style: none; /*убрали маркер у списка (точечку)*/
     flex-wrap: wrap; /* если пунктов меню будет больше, чем влезает - чтобы перенеслись на другую строчку*/
 
@@ -81,7 +81,7 @@ body {
     margin-top: 22px;
     margin-left: 444px;
 
-    display: flex;     /*чтобы пункты меню друг за другом в строку выстроились*/
+    display: flex; /*чтобы пункты меню друг за другом в строку выстроились*/
     list-style: none; /*убрали маркер у списка (точечку)*/
     flex-wrap: wrap; /* если пунктов меню будет больше, чем влезает - чтобы перенеслись на другую строчку*/
 
@@ -123,23 +123,38 @@ body {
 /*-------------------------*/
 /* слайдер */
 /*---------------------------*/
+
+.site-wrapper {
+    background-color: #849d8f;
+
+    /*8996a6*/
+    /*9d8b84*/
+
+    /*background-image: url("../img/slide-1.png");*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: top center;*/
+}
+
 .page-main-slider {
     position: relative;
-    width: 600px;
-    height: 600px;
-    border: 1px solid red;
+    padding-top: 275px;
+    text-align: center;
+    /*border: 1px solid red;*/
 }
 
 .slider-controls {
     position: absolute;
-
+    bottom: 18px;
+    left: 0;
+    z-index: 20;
 }
 
 .slider-controls-label {
-    display: inline-block;
+    display: inline-block; /* чтобы элемент воспринимал размеры */
     box-sizing: border-box;
     width: 21px;
     height: 21px;
+    margin-right: 5px;
 
     border: 2px solid #ffffff;
     border-radius: 50%; /* окружность */
@@ -151,21 +166,124 @@ body {
     /*background-size: cover; !* Масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока. *!*/
 }
 
-#slider-selector-button1:checked ~ .slider-controls label[for="slider-selector-button1"],
-#slider-selector-button2:checked ~ .slider-controls label[for="slider-selector-button2"],
-#slider-selector-button3:checked ~ .slider-controls label[for="slider-selector-button3"] { /* для тильды нужно, чтобы теги имели одного родителя поэтому используется .slider-controls */
+#slider-selector-button1:checked ~ .site-wrapper label[for="slider-selector-button1"],
+#slider-selector-button2:checked ~ .site-wrapper label[for="slider-selector-button2"],
+#slider-selector-button3:checked ~ .site-wrapper label[for="slider-selector-button3"] {
+    /* для тильды нужно, чтобы теги имели одного родителя поэтому используется .slider-controls */
 
-    background-color: #ffffff;
+    background-color: #ffffff; /* это для нажатой радио-баттон */
 
     /*background-image: url("../img/radio-on.svg");*/
     /*background-size: cover; !* Масштабирует изображение с сохранением пропорций так, чтобы его ширина или высота равнялась ширине или высоте блока. *!*/
 }
 
-#slider-selector-button1:not(:checked) ~ .slider-controls label[for="slider-selector-button1"]:hover,
-#slider-selector-button2:not(:checked) ~ .slider-controls label[for="slider-selector-button2"]:hover,
-#slider-selector-button3:not(:checked) ~ .slider-controls label[for="slider-selector-button3"]:hover {
+#slider-selector-button1:not(:checked) ~ .site-wrapper label[for="slider-selector-button1"]:hover,
+#slider-selector-button2:not(:checked) ~ .site-wrapper label[for="slider-selector-button2"]:hover,
+#slider-selector-button3:not(:checked) ~ .site-wrapper label[for="slider-selector-button3"]:hover {
 
     background-color: #b2c1b7; /* при наведении фон внутри кружка немного меняется */
+}
+
+.slide {
+    display: none; /* по-умолчанию слайды выключены */
+}
+
+#slider-selector-button1:checked ~ .site-wrapper .slide:nth-child(1) {
+    /* для тильды ~ нужно, чтобы теги имели одного родителя поэтому для #slider-selector-button1 используется .site-wrapper */
+    display: block; /* включаю показ слайда № 1 если радио-кнопка1 нажата */
+}
+
+#slider-selector-button2:checked ~ .site-wrapper .slide:nth-child(2) {
+    /* для тильды ~ нужно, чтобы теги имели одного родителя поэтому для #slider-selector-button1 используется .site-wrapper */
+    display: block; /* включаю показ слайда № 2 если радио-кнопка2 нажата */
+}
+
+#slider-selector-button3:checked ~ .site-wrapper .slide:nth-child(3) {
+    /* для тильды ~ нужно, чтобы теги имели одного родителя поэтому для #slider-selector-button1 используется .site-wrapper */
+    display: block; /* включаю показ слайда № 3 если радио-кнопка3 нажата */
+}
+
+#slider-selector-button1:checked ~ .site-wrapper {
+    /* для тильды ~ нужно, чтобы теги имели одного родителя поэтому для #slider-selector-button1 используется .site-wrapper */
+    background-color: #849d8f; /* включаю фон № 1 если радио-кнопка1 нажата */
+    background-image: url("../img/background-slide1.png");
+    background-repeat: no-repeat;
+    background-position: center -10px; /* подогнал через PerfectPixel */
+    transition: background-image 0.5s ease, background-color 0.5s ease; /* анимация 0.5 секунды*/
+}
+
+#slider-selector-button2:checked ~ .site-wrapper {
+    /* для тильды ~ нужно, чтобы теги имели одного родителя поэтому для #slider-selector-button1 используется .site-wrapper */
+    background-color: #8996a6; /* включаю фон № 2 если радио-кнопка1 нажата */
+    background-image: url("../img/background-slide2.png");
+    background-repeat: no-repeat;
+    background-position: center -10px; /* подогнал через PerfectPixel */
+    transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+
+#slider-selector-button3:checked ~ .site-wrapper {
+    /* для тильды ~ нужно, чтобы теги имели одного родителя поэтому для #slider-selector-button1 используется .site-wrapper */
+    background-color: #9d8b84; /* включаю фон № 3 если радио-кнопка1 нажата */
+    background-image: url("../img/background-slide3.png");
+    background-repeat: no-repeat;
+    background-position: center -10px; /* подогнал через PerfectPixel */
+    transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+
+.slide-title {
+    width: 700px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 700;
+    color: #ffffff;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slide-button {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 278px;
+    height: 63px;
+
+    margin-top: 30px;
+    padding-top: 8px;
+
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: 700;
+    color: #ffffff;
+
+    text-align: center;
+    text-decoration: none; /*ссылка - без подчеркивания*/
+    text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76); /* тень для текста*/
+
+    background: #f26843;
+    background:  -moz-linear-gradient(top, #f26843 0%, #e74a35 100%);
+    background: -webkit-linear-gradient(top, #f26843 0%, #e74a35 100%);
+    background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+
+    border-radius: 100px;
+    box-shadow: 0 4px 4px rgba(172, 16, 0, 0.64);
+}
+
+.slide-button:hover {
+    background:  -moz-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
+    background: -webkit-linear-gradient(top, #f58669 0%, #ec6f5e 100%);
+    background: linear-gradient(to bottom, #f58669 0%, #ec6f5e 100%);
+
+    box-shadow: 0 4px 4px rgba(172, 16, 0, 1);
+}
+
+.slide-button:active {
+    background:  -moz-linear-gradient(top, #d84732 0%, #e1613e 100%);
+    background: -webkit-linear-gradient(top, #d84732 0%, #e1613e 100%);
+    background: linear-gradient(to bottom, #d84732 0%, #e1613e 100%);
+
+    box-shadow:   0 4px 4px rgba(172, 16, 0, 1);
 }
 
 /*--- окончание слайдера ---*/
