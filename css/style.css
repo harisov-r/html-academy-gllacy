@@ -38,13 +38,16 @@ body {
     margin: -1px;
 }
 
-.centered,
 .content-wrapper { /* центрирует */
     width: 1150px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 10px;
 }
+
+/*-------------------------*/
+/* header */
+/*---------------------------*/
 
 .page-navigation {
     display: flex;
@@ -286,7 +289,100 @@ body {
     box-shadow:   0 4px 4px rgba(172, 16, 0, 1);
 }
 
+/*для кешированной загрузки изображений*/
+.cashe1 {
+    background-image: url("../img/background-slide2.png");
+}
+
+.cashe2 {
+    background-image: url("../img/background-slide3.png");
+}
+
 /*--- окончание слайдера ---*/
+
+/*-------------------------*/
+/* подарки */
+/*---------------------------*/
+
+.gifts {
+    margin-top: 42px;
+}
+
+.gifts-list {
+    display: flex;
+    list-style: none; /*убрали маркер у списка (точечку)*/
+}
+
+.gift {
+    box-sizing: border-box;
+    width: 560px;
+    height: 229px;
+    padding: 16px 17px;
+}
+
+.gift:nth-child(1) {
+    background-image: url("../img/raspberry.png");
+    background-repeat: no-repeat;
+    margin-right: 26px;
+}
+
+.gift:nth-child(2) {
+    background-image: url("../img/chocolate.png");
+    background-repeat: no-repeat;
+}
+
+
+.gift-title {
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 41px;
+    color: #ffffff;
+
+    margin-bottom: 16px;
+}
+
+.gift-description {
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #ffffff;
+    margin-left: 2px;
+}
+
+.gift-button {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 165px;
+    height: 46px;
+
+    margin-top: 43px;
+    margin-left: 358px;
+    padding-top: 10px;
+
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+
+    text-align: center;
+    text-decoration: none; /*ссылка - без подчеркивания*/
+
+    background: #f26843;
+    background:  -moz-linear-gradient(top, #f26843 0%, #e74a35 100%);
+    background: -webkit-linear-gradient(top, #f26843 0%, #e74a35 100%);
+    background: linear-gradient(to bottom, #f26843 0%, #e74a35 100%);
+
+    border-radius: 100px;
+    box-shadow: 0 4px 4px rgba(172, 16, 0, 0.64);
+}
+.gift-big-button {
+    width: 189px;
+    height: 45px;
+    margin-left: 332px;
+}
 
 .button {
     cursor: pointer; /* при наведении рука с пальцем в качестве курсора, а не стрелочка*/
